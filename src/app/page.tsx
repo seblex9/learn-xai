@@ -6,6 +6,10 @@ function getTasks() {
   return prisma.task.findMany();
 }
 
+async function toggleTask(id: string, complete: boolean) {
+  'use server';
+}
+
 export default async function Home() {
   console.log('Home function has been called'); // Debug Log
 
@@ -28,7 +32,7 @@ export default async function Home() {
         </header>
         <ul className='pl-4'>
           {tasks.map(task => (
-            <TaskItem key={task.id} {...task} />
+            <TaskItem key={task.id} {...task} toggleTask={toggleTask} />
           ))}
         </ul>
       </>
