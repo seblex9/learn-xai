@@ -12,9 +12,19 @@ async function toggleTask(id: string, complete: boolean) {
   await prisma.task.update({ where: { id }, data: { complete } });
 }
 
+const defaultTasks = [
+  {
+    id: '1',
+    title: 'LIME (Local Interpretable Model-agnostic Explanations)',
+    complete: false,
+  },
+  { id: '2', title: 'Saliency Maps', complete: false },
+  { id: '3', title: 'Quantile Regression', complete: false },
+];
+
 export default async function Home() {
   try {
-    const tasks = await getTasks();
+    const tasks = [...defaultTasks, ...(await getTasks())];
 
     return (
       <div className='container mx-auto p-12 bg-black text-white'>
