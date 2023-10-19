@@ -28,7 +28,7 @@ export default async function Home() {
 
     return (
       <div className='container mx-auto p-12 bg-black text-white'>
-        <header className='flex justify-between items-center mb-12'>
+        <header className='flex justify-between items-center mb-1'>
           <div>
             <h1 className='text-3xl font-bold text-white'>Learn XAI</h1>
             <p className='text-base leading-6'>
@@ -42,74 +42,79 @@ export default async function Home() {
             New
           </Link>
         </header>
-        <div className='container mx-auto p-12 bg-black text-white'>
-          {/* ... */}
-          <div className='bg-gray-900 p-8 rounded-lg shadow-lg text-white'>
-            <ul>
-              {tasks.map(task => (
-                <li className='py-2' key={task.id}>
-                  {' '}
-                  {/* Reduced padding here */}
-                  <TaskItem {...task} toggleTask={toggleTask} />
-                </li>
-              ))}
-            </ul>
+        <div className='container mx-auto p-2 bg-black text-white mt-10'>
+          <div className='w-full'>
+            {/* First Container */}
+            <div className='bg-gray-900 p-8 rounded-lg shadow-lg text-white'>
+              <ul>
+                {tasks.map(task => (
+                  <li className='py-2' key={task.id}>
+                    {' '}
+                    {/* Reduced padding here */}
+                    <TaskItem {...task} toggleTask={toggleTask} />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          {/* ... */}
-        </div>
 
-        <div className='bg-gray-900 p-8 rounded shadow mt-16 text-white'>
-          <h3 className='text-2xl font-semibold mb-4'>
-            What is XAI? Start here:
-          </h3>
-          <p className='mb-4'>
-            <h4 className='font-semibold mb-4'>Articles:</h4>
-            <ul className='list-disc list-inside'>
-              <li>
-                <a
-                  href='https://medium.com/squaredev-publications/the-importance-of-explainable-ai-in-software-2-0-e5df4ff1de68'
-                  className='text-green-600 underline ml-1'
-                >
-                  The importance of Explainable AI in Software 2.0
-                </a>
-                &nbsp;by Megaklis Vasilakis, founder of
-                <a
-                  href='https://squaredev.io/'
-                  className='text-green-600 underline ml-1'
-                >
-                  SquareDev
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://www.mdpi.com/2673-2688/4/3/34'
-                  className='text-green-600 underline ml-1'
-                >
-                  Explainable Artificial Intelligence (XAI): Concepts and
-                  Challenges in Healthcare
-                </a>
-                &nbsp;by Tim Hulsen
-              </li>
-              <li>
-                <a
-                  href='https://www.ericsson.com/en/reports-and-papers/white-papers/explainable-ai--how-humans-can-trust-ai'
-                  className='text-green-600 underline ml-1'
-                >
-                  Explainable AI – how humans can trust AI
-                </a>
-                &nbsp;white paper
-              </li>
-            </ul>
-          </p>
-          <h4 className='font-semibold mb-4'>Videos:</h4>
-          <iframe
-            className='rounded shadow'
-            width='560'
-            height='315'
-            src='https://www.youtube.com/embed/jFHPEQi55Ko'
-            frameBorder='0'
-            allowFullScreen
-          ></iframe>
+          <div className='w-full'>
+            {/* Second Container */}
+            <div className='bg-gray-900 p-8 rounded shadow mt-10 text-white'>
+              <h3 className='text-2xl font-semibold mb-4'>
+                What is XAI? Start here:
+              </h3>
+              <p className='mb-4'>
+                <h4 className='font-semibold mb-4'>Articles:</h4>
+                <ul className='list-disc list-inside'>
+                  <li>
+                    <a
+                      href='https://medium.com/squaredev-publications/the-importance-of-explainable-ai-in-software-2-0-e5df4ff1de68'
+                      className='text-green-600 underline ml-1'
+                    >
+                      The importance of Explainable AI in Software 2.0
+                    </a>
+                    &nbsp;by Megaklis Vasilakis, founder of
+                    <a
+                      href='https://squaredev.io/'
+                      className='text-green-600 underline ml-1'
+                    >
+                      SquareDev
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='https://www.mdpi.com/2673-2688/4/3/34'
+                      className='text-green-600 underline ml-1'
+                    >
+                      Explainable Artificial Intelligence (XAI): Concepts and
+                      Challenges in Healthcare
+                    </a>
+                    &nbsp;by Tim Hulsen
+                  </li>
+                  <li>
+                    <a
+                      href='https://www.ericsson.com/en/reports-and-papers/white-papers/explainable-ai--how-humans-can-trust-ai'
+                      className='text-green-600 underline ml-1'
+                    >
+                      Explainable AI – how humans can trust AI
+                    </a>
+                    &nbsp;white paper
+                  </li>
+                </ul>
+              </p>
+              <h4 className='font-semibold mb-4'>Videos:</h4>
+              <div className='relative' style={{ paddingTop: '56.25%' }}>
+                {/* 16:9 Aspect Ratio (56.25% = 9 / 16 * 100%) */}
+                <iframe
+                  className='absolute top-0 left-0 w-full h-full rounded shadow'
+                  src='https://www.youtube.com/embed/jFHPEQi55Ko'
+                  frameBorder='0'
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
