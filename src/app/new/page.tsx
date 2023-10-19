@@ -1,9 +1,17 @@
+import { prisma } from '@/db';
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
 
 async function createTask(data: FormData) {
   'use server';
 
-  console.log('hi');
+  const title = data.get('title')?.valueOf();
+  if (typeof title !== 'string' || title.length === 0) {
+    throw new Error('Invalid title');
+  }
+
+  await prisma.task.create({ data: { title, complete: false } });
+  redirect('/');
 }
 
 export default function Page() {
@@ -12,7 +20,7 @@ export default function Page() {
       <header className='flex justify-between items-center mb-4'>
         <h1 className='text-2xl'>New</h1>
       </header>
-      <form className='flex gap-2 flex-col'>
+      <form action={createTask} className='flex gap-2 flex-col'>
         <input
           type='text'
           name='title'
