@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Learn XAI (Explainable AI) To-Learn List App
 
-## Getting Started
+Learn XAI is a web application that provides a "To-Learn" list for Explainable AI (XAI) concepts. It helps users keep track of the concepts they want to learn and provides a curated list of articles and videos to get started with XAI. Additionally, the app includes placeholder suggestion tasks for users.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Create and manage your "To-Learn" list for Explainable AI concepts.
+- Check off completed tasks and track your progress.
+- Access a list of recommended articles and videos to start learning about XAI.
+- Placeholder suggestion tasks to get you started.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js:** Learn XAI is built using Next.js, a popular React framework for building server-rendered React applications.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Redux:** Redux is used for state management, allowing for efficient data handling and updates in the application.
 
-## Learn More
+- **SQLite:** SQLite is used as the database system for storing user tasks and data. It's a lightweight and efficient relational database.
 
-To learn more about Next.js, take a look at the following resources:
+- **Prisma:** Prisma is an ORM (Object-Relational Mapping) that simplifies database interactions. It's used to connect the app to the SQLite database and perform database operations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Tailwind CSS:** Tailwind CSS is used for styling the app. It provides a utility-first CSS approach and helps in creating responsive and visually appealing user interfaces.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Heroku:** The app is deployed to Heroku, a cloud platform that hosts web applications.
