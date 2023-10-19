@@ -27,8 +27,8 @@ export default async function Home() {
     const tasks = [...defaultTasks, ...(await getTasks())];
 
     return (
-      <div className='container mx-auto p-12 bg-black text-white'>
-        <header className='flex justify-between items-center mb-1'>
+      <div className='container mx-auto p-4 bg-black text-white'>
+        <header className='flex justify-between items-center mb-1 p-3'>
           <div>
             <h1 className='text-3xl font-bold text-white'>Learn XAI</h1>
             <p className='text-base leading-6'>
@@ -42,15 +42,13 @@ export default async function Home() {
             New
           </Link>
         </header>
-        <div className='container mx-auto p-2 bg-black text-white mt-10'>
+        <div className='container mx-auto p-2 bg-black text-white mt-3'>
           <div className='w-full'>
-            {/* First Container */}
             <div className='bg-gray-900 p-8 rounded-lg shadow-lg text-white'>
               <ul>
                 {tasks.map(task => (
                   <li className='py-2' key={task.id}>
                     {' '}
-                    {/* Reduced padding here */}
                     <TaskItem {...task} toggleTask={toggleTask} />
                   </li>
                 ))}
@@ -59,7 +57,6 @@ export default async function Home() {
           </div>
 
           <div className='w-full'>
-            {/* Second Container */}
             <div className='bg-gray-900 p-8 rounded shadow mt-10 text-white'>
               <h3 className='text-2xl font-semibold mb-4'>
                 What is XAI? Start here:
@@ -105,7 +102,6 @@ export default async function Home() {
               </p>
               <h4 className='font-semibold mb-4'>Videos:</h4>
               <div className='relative' style={{ paddingTop: '56.25%' }}>
-                {/* 16:9 Aspect Ratio (56.25% = 9 / 16 * 100%) */}
                 <iframe
                   className='absolute top-0 left-0 w-full h-full rounded shadow'
                   src='https://www.youtube.com/embed/jFHPEQi55Ko'
