@@ -1,5 +1,11 @@
 import Link from 'next/link';
 
+async function createTask(data: FormData) {
+  'use server';
+
+  console.log('hi');
+}
+
 export default function Page() {
   return (
     <>
