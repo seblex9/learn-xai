@@ -8,6 +8,8 @@ function getTasks() {
 
 async function toggleTask(id: string, complete: boolean) {
   'use server';
+
+  await prisma.task.update({ where: { id }, data: { complete } });
 }
 
 export default async function Home() {

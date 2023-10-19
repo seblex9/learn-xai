@@ -1,3 +1,5 @@
+'use client';
+
 type TaskItemProps = {
   id: string;
   title: string;
